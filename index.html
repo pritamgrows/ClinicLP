@@ -37,20 +37,9 @@
 
   h1, h2, h3, .serif { font-family: 'Cormorant Garamond', serif; }
 
-  /* ── URGENCY STRIP & STICKY HEADER ── */
-  .header-wrapper {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-  }
-  .urgency-strip {
-    background: var(--gold);
-    color: var(--navy);
-    text-align: center;
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-  }
+  /* ── STICKY HEADER ── */
   .sticky-bar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 999;
     background: var(--navy);
     display: flex; align-items: center; justify-content: space-between;
     padding: 0.6rem 2rem;
@@ -84,7 +73,7 @@
     min-height: 100vh;
     background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 55%, #1C3050 100%);
     display: grid; grid-template-columns: 1fr 1fr;
-    align-items: center; padding: 9rem 4rem 4rem; /* adjusted padding for strip */
+    align-items: center; padding: 7rem 4rem 4rem; 
     position: relative; overflow: hidden;
   }
   .hero::before {
@@ -123,9 +112,25 @@
   .hero h1 em { color: var(--gold-light); font-style: italic; }
   .hero-sub {
     color: rgba(255,255,255,0.65); font-size: 1.05rem;
-    font-weight: 300; line-height: 1.7; margin: 1.2rem 0 2.2rem;
+    font-weight: 300; line-height: 1.7; margin: 1.2rem 0 1.2rem;
     max-width: 440px;
   }
+  
+  /* MOVED OFFER STRIP */
+  .hero-offer {
+    display: inline-block;
+    background: rgba(200,151,74,0.12);
+    border: 1px dashed var(--gold);
+    color: var(--gold-light);
+    padding: 0.6rem 1.2rem;
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 1.8rem;
+    letter-spacing: 0.02em;
+  }
+  .hero-offer strong { color: var(--white); font-weight: 700; }
+
   .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
   .hero-ctas .primary {
     background: var(--gold); color: var(--navy);
@@ -547,8 +552,11 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     section { padding: 3.5rem 1.5rem; }
-    .hero { grid-template-columns: 1fr; padding: 10rem 1.5rem 3rem; }
-    .hero-visual { display: none; }
+    
+    .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 3rem; }
+    .hero-visual { display: flex; width: 100%; justify-content: center; }
+    .clinic-card { width: 100%; max-width: 400px; }
+
     .pain-section, .trust-grid, .treatment-grid, .contact-section { grid-template-columns: 1fr; gap: 2rem; }
     .faq-grid { grid-template-columns: 1fr; }
     .stats-row { grid-template-columns: repeat(3, 1fr); }
@@ -564,19 +572,13 @@
 </head>
 <body>
 
-<div class="header-wrapper">
-  <div class="urgency-strip">
-    🎁 Special Offer: ₹400 Off your first consultation this week.
+<header class="sticky-bar">
+  <div class="logo">Smile<span>Craft</span> Dental</div>
+  <div class="bar-actions">
+    <a href="tel:+919XXXXXXXXX" class="btn-call">📞 Call Now</a>
+    <a href="#book" class="btn-book">Book Free Consult</a>
   </div>
-
-  <header class="sticky-bar">
-    <div class="logo">Smile<span>Craft</span> Dental</div>
-    <div class="bar-actions">
-      <a href="tel:+919XXXXXXXXX" class="btn-call">📞 Call Now</a>
-      <a href="#book" class="btn-book">Book Free Consult</a>
-    </div>
-  </header>
-</div>
+</header>
 
 <section class="hero" id="home">
   <div class="hero-text">
@@ -586,6 +588,11 @@
     </div>
     <h1>Best <em>Dental Clinic in Durgapur</em></h1>
     <p class="hero-sub">Experience painless modern dentistry — root canals, implants, braces, and smile makeovers by Durgapur's most experienced dental team.</p>
+    
+    <div class="hero-offer">
+      🎁 <strong>Special Offer:</strong> ₹400 Off your first consultation this week.
+    </div>
+
     <div class="hero-ctas">
       <a href="#book" class="primary">Book Free Consultation</a>
       <a href="tel:+919XXXXXXXXX" class="secondary">
