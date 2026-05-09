@@ -116,7 +116,6 @@
     max-width: 440px;
   }
   
-  /* MOVED OFFER STRIP */
   .hero-offer {
     display: inline-block;
     background: rgba(200,151,74,0.12);
@@ -166,13 +165,6 @@
     display: flex; align-items: center; justify-content: center;
     border: 1px solid rgba(200,151,74,0.2);
     position: relative;
-  }
-  .clinic-img-placeholder svg { width: 80px; height: 80px; opacity: 0.3; }
-  .clinic-img-placeholder .img-label {
-    position: absolute; bottom: 0.75rem; left: 0.75rem;
-    background: rgba(0,0,0,0.5); color: rgba(255,255,255,0.6);
-    font-size: 0.7rem; padding: 0.25rem 0.6rem; border-radius: 4px;
-    letter-spacing: 0.05em;
   }
   .stars { color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 0.4rem; }
   .rating-line { color: rgba(255,255,255,0.7); font-size: 0.82rem; margin-bottom: 1rem; }
@@ -542,13 +534,6 @@
   footer .f-logo span { color: var(--gold-light); }
   footer p { color: rgba(255,255,255,0.35); font-size: 0.75rem; }
 
-  /* ── ANIMATIONS ── */
-  .fade-up {
-    opacity: 0; transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-up.visible { opacity: 1; transform: translateY(0); }
-
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     section { padding: 3.5rem 1.5rem; }
@@ -564,7 +549,6 @@
     .cta-strip { padding: 2.5rem 1.5rem; }
     footer { padding: 2rem 1.5rem; margin-bottom: 60px; /* space for mobile bar */ }
     
-    /* Swap floating buttons for fixed bottom bar */
     .floating-btns { display: none; }
     .mobile-bottom-bar { display: flex; }
   }
@@ -586,6 +570,7 @@
       <div class="dot"></div>
       ⚡ Open Today for Emergency Pain Relief
     </div>
+    
     <h1>Best <em>Dental Clinic in Durgapur</em></h1>
     <p class="hero-sub">Experience painless modern dentistry — root canals, implants, braces, and smile makeovers by Durgapur's most experienced dental team.</p>
     
@@ -625,12 +610,7 @@
   <div class="hero-visual">
     <div class="clinic-card">
       <div class="clinic-img-placeholder">
-        <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M40 10C28 10 20 20 20 30C20 42 28 50 30 60C32 68 34 72 40 72C46 72 48 68 50 60C52 50 60 42 60 30C60 20 52 10 40 10Z" stroke="#C8974A" stroke-width="2" fill="none"/>
-          <circle cx="33" cy="28" r="3" fill="#C8974A" opacity="0.5"/>
-          <circle cx="47" cy="28" r="3" fill="#C8974A" opacity="0.5"/>
-        </svg>
-        <div class="img-label">[ Add your clinic photo here ]</div>
+        <img src="clinic.jpg" alt="SmileCraft Dental Clinic in Durgapur" style="width: 100%; height: 100%; object-fit: cover;">
       </div>
       <div class="stars">★★★★★</div>
       <div class="rating-line"><strong>4.9/5</strong> · 200+ Google Reviews</div>
@@ -645,7 +625,7 @@
   </div>
 </section>
 
-<section class="pain-section fade-up">
+<section class="pain-section">
   <div>
     <span class="section-label">We Understand</span>
     <h2 class="section-title">Your Concerns<br>Are <em>Valid</em></h2>
@@ -678,7 +658,7 @@
   </div>
 </section>
 
-<section class="slider-section fade-up">
+<section class="slider-section">
   <div class="centered">
     <span class="section-label">Real Results</span>
     <h2 class="section-title">See The <em>Difference</em></h2>
@@ -687,19 +667,17 @@
   </div>
   
   <div class="slider-container">
-    <div class="img-after">
-      [ AFTER IMAGE PLACEHOLDER ]
+    <div class="img-after" style="background-image: url('after.jpg'); background-size: cover; background-position: center;">
       <span class="slider-label label-after">After</span>
     </div>
-    <div class="img-before" id="img-before">
-      [ BEFORE IMAGE PLACEHOLDER ]
+    <div class="img-before" id="img-before" style="background-image: url('before.jpg'); background-size: cover; background-position: center;">
       <span class="slider-label label-before">Before</span>
     </div>
     <input type="range" min="0" max="100" value="50" class="ba-slider-input" oninput="slideBeforeAfter(this)">
   </div>
 </section>
 
-<section class="benefits-section fade-up">
+<section class="benefits-section">
   <div class="centered">
     <span class="section-label">Why Choose Us</span>
     <h2 class="section-title">The SmileCraft<br><em>Difference</em></h2>
@@ -740,7 +718,7 @@
   </div>
 </section>
 
-<section class="trust-section fade-up">
+<section class="trust-section">
   <div class="centered">
     <span class="section-label">Trusted By Thousands</span>
     <h2 class="section-title">Durgapur Speaks<br>for <em>Itself</em></h2>
@@ -796,7 +774,7 @@
   </div>
 </section>
 
-<section class="treatment-section fade-up">
+<section class="treatment-section">
   <div class="centered">
     <span class="section-label">What To Expect</span>
     <h2 class="section-title">Your Treatment,<br><em>Step by Step</em></h2>
@@ -875,7 +853,7 @@
   </div>
 </section>
 
-<section class="faq-section fade-up">
+<section class="faq-section">
   <div class="centered">
     <span class="section-label">Common Questions</span>
     <h2 class="section-title">Answers Before<br>You <em>Call</em></h2>
@@ -927,7 +905,7 @@
   </div>
 </section>
 
-<div class="cta-strip fade-up">
+<div class="cta-strip">
   <div>
     <h2>Ready to Transform Your Smile?</h2>
     <p>Join 2,000+ patients who chose Durgapur's most trusted dental team.</p>
@@ -938,7 +916,7 @@
   </div>
 </div>
 
-<section class="contact-section fade-up" id="book">
+<section class="contact-section" id="book">
   <div class="contact-info">
     <span class="section-label">Get In Touch</span>
     <h2 class="section-title">Visit Us<br>in <em>Durgapur</em></h2>
@@ -1064,17 +1042,6 @@
   function slideBeforeAfter(input) {
     document.getElementById('img-before').style.width = input.value + '%';
   }
-
-  // Fade Up Intersection Observer
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 120);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
