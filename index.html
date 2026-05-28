@@ -31,12 +31,11 @@
     color: var(--text-body);
     background: var(--off-white);
     overflow-x: hidden;
-    line-height: 1.6; /* Slightly increased for readability */
+    line-height: 1.6;
   }
 
   h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
   
-  /* Bold highlights for scanning */
   strong, b { font-weight: 700; color: var(--navy); }
   .text-highlight { color: var(--gold); }
 
@@ -85,7 +84,6 @@
   }
   .hero-sub strong { color: var(--white); }
 
-  /* Modified CTA Stack */
   .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; align-items: center; }
   .hero-ctas a {
     border: none; padding: 0.85rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;
@@ -100,7 +98,6 @@
   .hero-ctas .btn-wa { background: #25D366; color: var(--white); }
   .hero-ctas .btn-wa:hover { background: #20BA56; }
   
-  /* Urgency & Trust Under Hero */
   .hero-trust-subtext {
     color: var(--white); font-size: 0.85rem; margin-bottom: 2rem;
   }
@@ -119,6 +116,9 @@
     padding: 0.4rem 0.8rem; border-radius: var(--radius); color: var(--white);
     font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 700;
   }
+
+  /* Added to hide mobile banner on desktop */
+  .mobile-trust-banner { display: none; }
 
   /* ── SECTIONS GENERIC ── */
   section { padding: 4rem; }
@@ -295,19 +295,22 @@
     .sticky-bar .logo { font-size: 1.05rem; }
     .btn-book { padding: 0.35rem 0.6rem; font-size: 0.72rem; }
 
+    /* Centered Hero - Height extended to push banner to first scroll */
     .hero { 
-      grid-template-columns: 1fr; 
-      min-height: auto; 
-      padding: 6.5rem 1.5rem 3.5rem; 
-      gap: 1.5rem; 
-      text-align: center; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 95vh;
+      padding: 6.5rem 1.5rem 2rem;
+      text-align: center;
     }
+    
     .hero-text { width: 100%; }
     .hero h1 { font-size: 2.2rem; }
     .hero-sub { font-size: 1rem; margin: 0 auto 1.5rem; max-width: 100%; }
     .hero-visual { display: none; } 
 
-    /* Smaller Mobile Buttons for Hero */
+    /* Mobile Buttons */
     .hero-ctas { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
@@ -325,6 +328,16 @@
       font-size: 0.8rem; 
     }
     
+    /* HIDE THE IN-HERO DESKTOP ROW ON MOBILE */
+    .desktop-trust { display: none !important; }
+
+    /* DISPLAY THE SCROLL BANNER ROW ON MOBILE */
+    .mobile-trust-banner {
+      display: block;
+      background: var(--navy-mid);
+      padding: 0 1.5rem 3.5rem 1.5rem;
+    }
+
     .hero-trust-row { 
       display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%; 
       background: rgba(255,255,255,0.05); padding: 1.2rem; border-radius: var(--radius-lg); border: 1px solid rgba(200,151,74,0.2);
@@ -470,7 +483,7 @@
       Rated 4.9★ by 200+ local patients. <strong>Limited same-day emergency slots available.</strong>
     </div>
 
-    <div class="hero-trust-row">
+    <div class="hero-trust-row desktop-trust">
       <div class="trust-item"><span>4.9 ★</span>Google Rating</div>
       <div class="trust-item"><span>2,000+</span>Happy Patients</div>
       <div class="trust-item"><span>25+ Yrs</span>In Practice</div>
@@ -485,6 +498,15 @@
     </div>
   </div>
 </section>
+
+<div class="mobile-trust-banner">
+  <div class="hero-trust-row">
+    <div class="trust-item"><span>4.9 ★</span>Google Rating</div>
+    <div class="trust-item"><span>2,000+</span>Happy Patients</div>
+    <div class="trust-item"><span>25+ Yrs</span>In Practice</div>
+    <div class="trust-item"><span>Ward No. 23</span>Baguiati, WB</div>
+  </div>
+</div>
 
 <section class="doctor-section">
   <div class="doctor-image-wrap">
