@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Painless Dental Clinic in Durgapur | Same-Day Emergency Appointment</title>
-<meta name="description" content="Get painless dental care for nervous patients in Durgapur near City Centre. Root canals, implants & emergency care by senior dentists. 4.9★ rated. Book a free consultation today.">
+<title>Painless Dental Clinic in Baguiati | Same-Day Emergency Appointment</title>
+<meta name="description" content="Get painless dental care for nervous patients in Baguiati. Root canals, implants & emergency care by senior dentists. 4.9★ rated. Book a free consultation today.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <style>
@@ -21,6 +21,7 @@
     --text-muted: #5C677D;
     --radius: 4px;
     --radius-lg: 8px;
+    --emergency-red: #d90429;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -60,7 +61,7 @@
 
   /* ── HERO SECTION ── */
   .hero {
-    min-height: 95vh; /* Pushes the doctor section firmly below the fold */
+    min-height: 95vh; 
     background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 100%);
     display: grid; grid-template-columns: 1.2fr 0.8fr;
     align-items: center; padding: 7rem 4rem 3rem; 
@@ -79,15 +80,26 @@
     margin-bottom: 2rem; max-width: 540px;
   }
 
-  .hero-ctas { display: flex; gap: 1rem; margin-bottom: 2rem; align-items: center; }
-  .hero-ctas .primary {
-    background: var(--gold); color: var(--navy);
-    border: none; padding: 0.85rem 1.75rem; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;
+  /* Modified CTA Stack */
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; align-items: center; }
+  .hero-ctas a {
+    border: none; padding: 0.85rem 1.5rem; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;
     font-weight: 700; text-transform: uppercase;
     border-radius: var(--radius); cursor: pointer; text-decoration: none;
-    transition: all 0.2s;
+    transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 0.5rem;
   }
+  .hero-ctas .primary { background: var(--gold); color: var(--navy); }
   .hero-ctas .primary:hover { background: var(--gold-light); }
+  .hero-ctas .btn-call { background: var(--white); color: var(--navy); border: 1px solid var(--white); }
+  .hero-ctas .btn-call:hover { background: var(--off-white); }
+  .hero-ctas .btn-wa { background: #25D366; color: var(--white); }
+  .hero-ctas .btn-wa:hover { background: #20BA56; }
+  
+  /* Urgency & Trust Under Hero */
+  .hero-trust-subtext {
+    color: var(--white); font-size: 0.85rem; margin-bottom: 2rem;
+  }
+  .hero-trust-subtext strong { color: var(--gold-light); }
 
   .hero-trust-row { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
   .trust-item { color: rgba(255,255,255,0.9); font-size: 0.85rem; font-weight: 500; }
@@ -115,12 +127,18 @@
   .centered { text-align: center; margin: 0 auto; }
   .centered .section-body { margin: 0 auto 1.5rem; }
 
-  /* ── DOCTOR TRUST SECTION (Immediately After Hero) ── */
+  /* ── DOCTOR TRUST SECTION (Enhanced Authority) ── */
   .doctor-section { background: var(--white); display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 3rem; align-items: center; }
   .doctor-image-wrap { width: 100%; max-width: 320px; border-radius: var(--radius-lg); overflow: hidden; justify-self: end; }
   .doctor-image-wrap img { width: 100%; height: 340px; object-fit: cover; display: block; }
   .doctor-info h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--navy); margin-bottom: 0.25rem; font-weight: 700; }
-  .doctor-qual { color: var(--gold); font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; }
+  .doctor-qual { color: var(--gold); font-size: 0.9rem; font-weight: 700; margin-bottom: 0.5rem; }
+  
+  .doctor-authority-list {
+    list-style: none; margin-bottom: 1rem; font-size: 0.85rem; color: var(--navy-mid); font-weight: 600;
+  }
+  .doctor-authority-list li { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.3rem; }
+  .doctor-authority-list li::before { content: "✓"; color: var(--gold); font-weight: bold; }
   .doctor-paragraph { color: var(--text-body); font-size: 0.95rem; max-width: 520px; }
 
   /* ── VISUAL METRICS / STATS BAR ── */
@@ -130,24 +148,40 @@
   .stat-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold-light); font-weight: 700; margin-bottom: 0.15rem; }
   .stat-card p { color: rgba(255,255,255,0.8); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
 
-  /* ── CORE BENEFITS 2x2 GRID ── */
+  /* ── CORE BENEFITS / WHY CHOOSE US (Upgraded) ── */
   .benefits-section { background: var(--off-white); }
-  .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
-  .benefit-card-box { background: var(--white); border: 1px solid rgba(200,151,74,0.12); border-radius: var(--radius-lg); padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; }
-  .b-box-icon { font-size: 1.5rem; line-height: 1; }
-  .benefit-card-box h4 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--navy); margin-bottom: 0.25rem; font-weight: 700; }
-  .benefit-card-box p { font-size: 0.85rem; color: var(--text-muted); }
+  .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
+  .benefit-card-box { background: var(--white); border: 1px solid rgba(200,151,74,0.12); border-radius: var(--radius-lg); padding: 1.5rem; text-align: center; transition: transform 0.2s; }
+  .benefit-card-box:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .b-box-icon { font-size: 2rem; line-height: 1; margin-bottom: 1rem; color: var(--gold); }
+  .benefit-card-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem; font-weight: 700; }
+  .benefit-card-box p { font-size: 0.8rem; color: var(--text-muted); }
 
+  /* ── PAIN-SPECIFIC INTENT SECTION ── */
+  .pain-intent-section { background: var(--gold-pale); border-top: 1px solid rgba(200,151,74,0.2); border-bottom: 1px solid rgba(200,151,74,0.2); padding: 3rem 4rem; }
+  .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; max-width: 900px; margin: 0 auto; background: var(--white); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+  .pain-left h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--emergency-red); margin-bottom: 0.5rem; }
+  .pain-left p { color: var(--text-body); font-weight: 600; margin-bottom: 1.5rem; }
+  .pain-list { list-style: none; margin-bottom: 1.5rem; }
+  .pain-list li { margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem; }
+  .pain-list li::before { content: "⚠️"; font-size: 0.8rem; }
+  .pain-cta-wrap { display: flex; gap: 1rem; }
+  .btn-emergency { background: var(--emergency-red); color: white; padding: 0.8rem 1.5rem; border-radius: var(--radius); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
+
+  /* ── HOW IT WORKS / WHAT HAPPENS (Process Flow) ── */
+  .process-section { background: var(--white); }
+  .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; max-width: 1000px; margin-left: auto; margin-right: auto; position: relative; }
+  .process-card { background: var(--off-white); padding: 2rem; border-radius: var(--radius-lg); text-align: center; border: 1px solid rgba(20,33,61,0.05); position: relative; z-index: 2; }
+  .process-step-num { width: 40px; height: 40px; background: var(--gold); color: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; margin: 0 auto 1rem; }
+  .process-card h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .process-card p { font-size: 0.85rem; color: var(--text-muted); }
+  
   /* ── BEFORE & AFTER SLIDER ── */
-  .slider-section { background: var(--white); color: var(--text-body); }
-  .slider-container {
-    position: relative; width: 100%; max-width: 600px; margin: 2rem auto 0; height: 340px;
-    border-radius: var(--radius-lg); overflow: hidden; border: 2px solid var(--gold); background: var(--off-white);
-  }
+  .slider-section { background: var(--white); color: var(--text-body); border-top: 1px solid rgba(200,151,74,0.12); }
+  .slider-container { position: relative; width: 100%; max-width: 600px; margin: 2rem auto 0; height: 340px; border-radius: var(--radius-lg); overflow: hidden; border: 2px solid var(--gold); background: var(--off-white); }
   .img-after { width: 100%; height: 100%; object-fit: cover; display: block; }
   .img-before { position: absolute; top: 0; left: 0; width: 50%; height: 100%; overflow: hidden; border-right: 3px solid var(--gold); }
   .img-before img { width: 600px; max-width: none; height: 340px; object-fit: cover; display: block; }
-  
   .slider-label { position: absolute; bottom: 1rem; background: rgba(0,0,0,0.75); color: #fff; padding: 0.3rem 0.75rem; border-radius: 50px; font-size: 0.75rem; z-index: 5; font-weight: 700; }
   .label-before { left: 1rem; }
   .label-after { right: 1rem; }
@@ -191,26 +225,32 @@
   .faq-a { padding: 0 1.2rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
   .faq-item.open .faq-a { max-height: 100px; padding: 0.4rem 1.2rem 1rem; }
 
-  /* ── INLINE FORM SECTION ── */
-  .form-section { background: var(--navy-mid); color: var(--white); padding: 4rem; }
-  .form-container-box { max-width: 580px; margin: 0 auto; background: var(--navy); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid rgba(200,151,74,0.25); }
-  .form-container-box h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--white); margin-bottom: 0.25rem; text-align: center; font-weight: 700; }
-  .form-container-box .form-sub { text-align: center; color: rgba(255,255,255,0.65); font-size: 0.85rem; margin-bottom: 1.5rem; }
+  /* ── INLINE FORM & OFFER SECTION ── */
+  .form-section { background: var(--navy-mid); color: var(--white); padding: 5rem 4rem; }
+  .form-offer-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto; align-items: center; }
+  
+  .offer-content h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--gold-light); margin-bottom: 0.5rem; }
+  .offer-content p { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; font-size: 0.95rem; }
+  .offer-list { list-style: none; margin-bottom: 2rem; }
+  .offer-list li { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.8rem; font-size: 0.95rem; font-weight: 600; }
+  .offer-list li::before { content: "✓"; background: var(--gold); color: var(--navy); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; }
+  
+  .wa-alternative { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
+  .wa-alternative p { font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--white); }
+  .btn-outline-wa { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.2rem; border: 1px solid #25D366; color: #25D366; text-decoration: none; border-radius: var(--radius); font-weight: 700; font-size: 0.85rem; transition: all 0.2s; }
+  .btn-outline-wa:hover { background: #25D366; color: white; }
+
+  .form-container-box { background: var(--navy); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(200,151,74,0.25); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+  .form-urgency { background: rgba(200,151,74,0.1); border-left: 3px solid var(--gold); padding: 0.75rem 1rem; margin-bottom: 1.5rem; font-size: 0.8rem; font-weight: 600; color: var(--gold-light); }
   .form-group { margin-bottom: 1rem; }
   .form-group label { display: block; color: rgba(255,255,255,0.75); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.35rem; font-weight: 700; }
-  .form-group input, .form-group select {
-    width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(200,151,74,0.3); border-radius: var(--radius);
-    color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 0.9rem; padding: 0.75rem 1rem; outline: none;
-  }
+  .form-group input, .form-group select { width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(200,151,74,0.3); border-radius: var(--radius); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 0.9rem; padding: 0.75rem 1rem; outline: none; }
   .form-group select option { background: var(--navy-mid); color: var(--white); }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   
-  .submit-btn {
-    width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 0.85rem;
-    font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; border-radius: var(--radius); cursor: pointer; margin-top: 0.5rem;
-    transition: opacity 0.2s, background 0.2s;
-  }
-  .form-fear-reduction { text-align: center; color: rgba(255,255,255,0.5); font-size: 0.75rem; margin-top: 0.4rem; }
+  .submit-btn { width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 1rem; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; border-radius: var(--radius); cursor: pointer; margin-top: 0.5rem; transition: opacity 0.2s, background 0.2s; }
+  .submit-btn:hover { background: var(--gold-light); }
+  .form-fear-reduction { text-align: center; color: rgba(255,255,255,0.5); font-size: 0.75rem; margin-top: 0.5rem; }
   .trust-trigger { text-align: center; color: var(--gold-light); font-size: 0.75rem; margin-top: 0.75rem; }
 
   /* ── FOOTER AREA ── */
@@ -248,43 +288,39 @@
     .sticky-bar .logo { font-size: 1.05rem; }
     .btn-book { padding: 0.35rem 0.6rem; font-size: 0.72rem; }
 
-    /* Force hero to take full viewport minus header so it pushes doctor image safely below fold */
     .hero { 
       grid-template-columns: 1fr; 
-      min-height: 90vh; 
-      padding: 5.5rem 1.5rem 2.5rem; 
+      min-height: auto; 
+      padding: 6.5rem 1.5rem 3.5rem; 
       gap: 1.5rem; 
       text-align: center; 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
     }
     .hero-text { width: 100%; }
-    .hero h1 { 
-      font-size: 2.4rem; 
-      line-height: 1.2; 
-      margin-bottom: 0.8rem; 
-    }
-    .hero-sub { 
-      font-size: 1.05rem; 
-      margin: 0 auto 2rem; 
-      line-height: 1.5; 
-      max-width: 90%;
-    }
+    .hero h1 { font-size: 2.2rem; }
+    .hero-sub { font-size: 1rem; margin: 0 auto 1.5rem; max-width: 100%; }
     .hero-visual { display: none; } 
 
-    .hero-ctas { flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; width: 100%; }
-    .hero-ctas .primary { width: 100%; padding: 1rem; font-size: 0.95rem; text-align: center; display: block; }
-    
-    .hero-trust-row { 
+    /* UPDATED: Smaller Mobile Buttons for Hero */
+    .hero-ctas { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
-      gap: 1rem; 
+      gap: 0.6rem; 
       width: 100%; 
-      background: rgba(255,255,255,0.05);
-      padding: 1.2rem;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(200,151,74,0.2);
+    }
+    .hero-ctas .primary { 
+      grid-column: span 2; 
+      padding: 0.8rem; 
+      font-size: 0.9rem; 
+    }
+    .hero-ctas a { 
+      width: 100%; 
+      padding: 0.7rem 0.5rem; 
+      font-size: 0.8rem; 
+    }
+    
+    .hero-trust-row { 
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; width: 100%; 
+      background: rgba(255,255,255,0.05); padding: 1.2rem; border-radius: var(--radius-lg); border: 1px solid rgba(200,151,74,0.2);
     }
     .trust-item { font-size: 0.8rem; text-align: center; width: 100%; line-height: 1.3; color: var(--white); }
     .trust-item span { display: block; font-size: 1.1rem; margin-bottom: 0.2rem; }
@@ -292,17 +328,29 @@
     .doctor-section { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; padding-top: 1.5rem; }
     .doctor-image-wrap { justify-self: center; max-width: 220px; }
     .doctor-image-wrap img { height: 240px; }
+    .doctor-authority-list li { justify-content: center; }
     
     .stats-section { padding: 1.5rem 0.5rem; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
     .stat-card { padding: 0.6rem 0.3rem; }
-    .stat-card h3 { font-size: 1.2rem; }
-    .stat-card p { font-size: 0.6rem; }
     .stat-card:nth-child(5) { grid-column: span 2; max-width: 100%; }
 
-    .benefits-grid, .gallery-grid, .google-screenshots-row, .faq-grid, .footer-container { grid-template-columns: 1fr; gap: 1rem; }
+    .benefits-grid { grid-template-columns: 1fr 1fr; }
+    .process-grid { grid-template-columns: 1fr; gap: 1rem; }
+    
+    .pain-grid { grid-template-columns: 1fr; gap: 1.5rem; padding: 1.5rem; text-align: center; }
+    .pain-list li { justify-content: center; }
+    .pain-cta-wrap { justify-content: center; }
+
+    .form-offer-wrapper { grid-template-columns: 1fr; gap: 2rem; }
+    .offer-content { text-align: center; }
+    .offer-list li { justify-content: center; text-align: left; }
+    .form-section { padding: 3rem 1rem; }
+    
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    .form-container-box { padding: 1.2rem; }
+    .google-screenshots-row, .faq-grid, .footer-container { grid-template-columns: 1fr; gap: 1rem; }
+    
+    .form-container-box { padding: 1.5rem; }
     .form-row { grid-template-columns: 1fr; gap: 1rem; }
     .slider-container { height: 240px; }
     .img-before img { height: 240px; }
@@ -317,16 +365,16 @@
 {
   "@context": "https://schema.org",
   "@type": "Dentist",
-  "name": "Vardhaman Dental Clinic",
+  "name": "Silver Canal Dental Clinic",
   "image": "https://heypritam.github.io/vardhamandental/clinic.jpg",
-  "telephone": "+919XXXXXXXXX",
+  "telephone": "07003477659",
   "url": "https://heypritam.github.io/vardhamandental/",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Medicare pharmacy, C/o, near shibamm marriage hall, Shankarpur West",
-    "addressLocality": "Durgapur",
+    "streetAddress": "57 Rafi Ahmed Kidwai Road, Rodkol Rd, Ward Number 23",
+    "addressLocality": "Baguiati, Kolkata",
     "addressRegion": "West Bengal",
-    "postalCode": "713206",
+    "postalCode": "700055",
     "addressCountry": "IN"
   },
   "geo": {
@@ -337,15 +385,9 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      "opens": "09:00",
-      "closes": "20:00"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Sunday",
-      "opens": "09:00",
-      "closes": "14:00"
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "17:00",
+      "closes": "21:00"
     }
   ],
   "aggregateRating": {
@@ -399,7 +441,7 @@
 <body>
 
 <header class="sticky-bar">
-  <div class="logo">Vardhaman<span>Dental</span></div>
+  <div class="logo">Silver Canal<span>Dental</span></div>
   <div class="bar-actions">
     <a href="#book" class="btn-book" id="header-book-btn" onclick="trackAnalyticsEvent('Header Form Navigation')">Book Free</a>
   </div>
@@ -407,24 +449,30 @@
 
 <section class="hero" id="home">
   <div class="hero-text">
-    <h1>Painless Dental Care for <em>Nervous Patients</em> in Durgapur</h1>
+    <h1>Painless Dental Care for <em>Nervous Patients</em> in Baguiati</h1>
     <p class="hero-sub">Root canals, implants & emergency dental care with same-day appointments.</p>
 
     <div class="hero-ctas">
-      <a href="#book" class="primary" id="hero-cta-book" onclick="trackAnalyticsEvent('Hero Primary Click')">Get Free Dental Consultation</a>
+      <a href="#book" class="primary" id="hero-cta-book" onclick="trackAnalyticsEvent('Hero Primary Click')">Get Free Consultation</a>
+      <a href="tel:07003477659" class="btn-call" onclick="trackAnalyticsEvent('Hero Call Click')">📞 Call Now</a>
+      <a href="https://wa.me/917003477659?text=Hi" class="btn-wa" target="_blank" onclick="trackAnalyticsEvent('Hero WhatsApp Click')">💬 WhatsApp</a>
     </div>
     
+    <div class="hero-trust-subtext">
+      Rated 4.9★ on Google by 200+ local patients. <strong>Limited same-day emergency slots available.</strong>
+    </div>
+
     <div class="hero-trust-row">
       <div class="trust-item"><span>4.9 ★</span>Google Rating</div>
       <div class="trust-item"><span>2,000+</span>Happy Patients</div>
       <div class="trust-item"><span>25+ Yrs</span>In Practice</div>
-      <div class="trust-item"><span>City Centre</span>Durgapur, WB</div>
+      <div class="trust-item"><span>Ward Number 23</span>Baguiati, WB</div>
     </div>
   </div>
 
   <div class="hero-visual">
     <div class="clinic-image-wrap">
-      <img src="dentist-patient.jpg" alt="Smiling dentist providing comfortable care to dental patient in Durgapur" fetchpriority="high">
+      <img src="dentist-patient.jpg" alt="Smiling dentist providing comfortable care to dental patient in Baguiati" fetchpriority="high">
       <div class="rating-badge-overlay">4.9 ★ Reassuring Local Care</div>
     </div>
   </div>
@@ -432,13 +480,117 @@
 
 <section class="doctor-section">
   <div class="doctor-image-wrap">
-    <img src="doctor.jpg" alt="Dr. Abhinandan P. Bumb Senior Dentist" loading="lazy">
+    <img src="doctor.jpg" alt="Dr. Siddhi Agarwala Senior Dentist" loading="lazy">
   </div>
   <div class="doctor-info">
     <span class="section-label">Meet Your Dentist</span>
-    <h3>Dr. Abhinandan P. Bumb</h3>
+    <h3>Dr. Siddhi Agarwala</h3>
     <div class="doctor-qual">BDS, MDS — 15+ Years Experience</div>
-    <p class="doctor-paragraph">Helping families across Durgapur with painless and modern dental care. We focus on making every nervous patient feel completely safe, relaxed, and comfortable from start to finish.</p>
+    <ul class="doctor-authority-list">
+      <li>5,000+ Procedures Completed</li>
+      <li>Advanced Implant Training</li>
+      <li>Cosmetic & Restorative Specialist</li>
+    </ul>
+    <p class="doctor-paragraph">Helping families across Baguiati with painless and modern dental care. We focus on making every nervous patient feel completely safe, relaxed, and comfortable from start to finish.</p>
+  </div>
+</section>
+
+<section class="benefits-section">
+  <div class="centered">
+    <span class="section-label">Dental Care Without Fear</span>
+    <h2 class="section-title">Why Patients Travel to <em>Silver Canal Dental</em></h2>
+    <p class="section-body">We go beyond standard care to ensure your experience is comfortable, predictable, and fully transparent.</p>
+  </div>
+  <div class="benefits-grid">
+    <div class="benefit-card-box">
+      <div class="b-box-icon">🖥️</div>
+      <h4>Digital X-Ray</h4>
+      <p>Modern diagnostic equipment for accurate planning.</p>
+    </div>
+    <div class="benefit-card-box">
+      <div class="b-box-icon">👨‍⚕️</div>
+      <h4>Experienced Dentist</h4>
+      <p>Care provided by senior MDS specialists.</p>
+    </div>
+    <div class="benefit-card-box">
+      <div class="b-box-icon">⚡</div>
+      <h4>Same-Day Relief</h4>
+      <p>Quick emergency appointments to stop the pain fast.</p>
+    </div>
+    <div class="benefit-card-box">
+      <div class="b-box-icon">🛡️</div>
+      <h4>Strict Sterilization</h4>
+      <p>100% sanitized tools and operatory environment.</p>
+    </div>
+    <div class="benefit-card-box">
+      <div class="b-box-icon">💰</div>
+      <h4>Transparent Pricing</h4>
+      <p>Clear costs discussed before any treatment begins.</p>
+    </div>
+    <div class="benefit-card-box">
+      <div class="b-box-icon">🧘</div>
+      <h4>Nervous Friendly</h4>
+      <p>Gentle techniques designed specifically for anxious patients.</p>
+    </div>
+    <div class="benefit-card-box">
+      <div class="b-box-icon">🌙</div>
+      <h4>Evening Slots</h4>
+      <p>Flexible 5 PM to 9 PM timings for working professionals.</p>
+    </div>
+    <div class="benefit-card-box">
+      <div class="b-box-icon">📱</div>
+      <h4>WhatsApp Support</h4>
+      <p>Direct communication with the clinic anytime.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pain-intent-section">
+  <div class="pain-grid">
+    <div class="pain-left">
+      <h2>Tooth Pain? Get Same-Day Relief</h2>
+      <p>Don't wait for the pain to get worse. We keep emergency slots open daily to handle severe dental issues immediately.</p>
+      <ul class="pain-list">
+        <li>Severe, throbbing pain</li>
+        <li>Swelling or bleeding gums</li>
+        <li>Broken or chipped tooth</li>
+        <li>Wisdom tooth issues</li>
+        <li>Lost crown or filling</li>
+      </ul>
+      <div class="pain-cta-wrap">
+        <a href="tel:07003477659" class="btn-emergency">📞 Call Clinic Now</a>
+      </div>
+    </div>
+    <div class="pain-right">
+      <div style="border-radius:var(--radius-lg); overflow:hidden; border:2px solid var(--white);">
+        <img src="clinic-reception.jpg" alt="Emergency dental care in Baguiati" style="width:100%; height:auto; display:block;" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="process-section">
+  <div class="centered">
+    <span class="section-label">Your Journey With Us</span>
+    <h2 class="section-title">What Happens During Your <em>Visit?</em></h2>
+    <p class="section-body">A simple, stress-free process designed to put you at ease from the moment you walk in.</p>
+  </div>
+  <div class="process-grid">
+    <div class="process-card">
+      <div class="process-step-num">1</div>
+      <h4>Consultation & Scan</h4>
+      <p>We'll examine your teeth, take necessary digital x-rays, and find the exact root cause of the issue.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-step-num">2</div>
+      <h4>Doctor Explains Treatment</h4>
+      <p>Dr. Siddhi will explain your options clearly, including timelines and a transparent cost estimate.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-step-num">3</div>
+      <h4>Start Treatment Comfortably</h4>
+      <p>Once you are ready and relaxed, we use modern numbing techniques for a completely painless procedure.</p>
+    </div>
   </div>
 </section>
 
@@ -467,49 +619,11 @@
   </div>
 </section>
 
-<section class="benefits-section">
-  <div class="centered">
-    <span class="section-label">Dental Care Without Fear</span>
-    <h2 class="section-title">Why Patients Choose Us</h2>
-    <p class="section-body">Our focus is simple — painless treatment, honest pricing, and patient comfort.</p>
-  </div>
-  <div class="benefits-grid">
-    <div class="benefit-card-box">
-      <div class="b-box-icon">💉</div>
-      <div>
-        <h4>Painless Treatment</h4>
-        <p>Modern techniques for a comfortable experience.</p>
-      </div>
-    </div>
-    <div class="benefit-card-box">
-      <div class="b-box-icon">💰</div>
-      <div>
-        <h4>Transparent Pricing</h4>
-        <p>Clear treatment costs with easy EMI options.</p>
-      </div>
-    </div>
-    <div class="benefit-card-box">
-      <div class="b-box-icon">⚡</div>
-      <div>
-        <h4>Same-Day Emergency Care</h4>
-        <p>Quick appointments for urgent dental problems.</p>
-      </div>
-    </div>
-    <div class="benefit-card-box">
-      <div class="b-box-icon">🦷</div>
-      <div>
-        <h4>Modern Sterilized Clinic</h4>
-        <p>Clean, hygienic & patient-friendly environment.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="slider-section">
   <div class="centered">
     <span class="section-label">Real Patient Results</span>
     <h2 class="section-title">See The <em>Difference</em></h2>
-    <p class="section-body">Swipe to see actual patient dental transformations from our local archive. <br><span style="font-size:0.85rem; font-weight:700; color:var(--gold);">Actual patient treated at our Durgapur clinic</span></p>
+    <p class="section-body">Swipe to see actual patient dental transformations from our local archive. <br><span style="font-size:0.85rem; font-weight:700; color:var(--gold);">Actual patient treated at our Baguiati clinic</span></p>
   </div>
   
   <div class="slider-container">
@@ -531,7 +645,7 @@
     <p class="section-body">See our clean, fully sterilized treatment rooms and welcoming waiting area.</p>
   </div>
   <div class="gallery-grid">
-    <div class="gallery-item"><img src="clinic-reception.jpg" alt="Clean reception and welcoming desk at our Durgapur dental clinic" loading="lazy"></div>
+    <div class="gallery-item"><img src="clinic-reception.jpg" alt="Clean reception and welcoming desk at our Baguiati dental clinic" loading="lazy"></div>
     <div class="gallery-item"><img src="treatment-room.jpg" alt="Modern sanitized operatory dental chair and advanced tools" loading="lazy"></div>
     <div class="gallery-item"><img src="sterilization-area.jpg" alt="Dedicated sterilization lab with autoclave monitoring equipment" loading="lazy"></div>
     <div class="gallery-item"><img src="clinic-waiting.jpg" alt="Safe patient comfortable sitting waiting area" loading="lazy"></div>
@@ -541,7 +655,7 @@
 <section class="reviews-section">
   <div class="centered">
     <span class="section-label">Patient Feedback</span>
-    <h2 class="section-title">Durgapur Speaks for <em>Itself</em></h2>
+    <h2 class="section-title">Baguiati Speaks for <em>Itself</em></h2>
   </div>
 
   <div class="google-screenshots-row">
@@ -566,7 +680,7 @@
         </div>
         <div class="review-stars">★★★★★</div>
         <div class="g-time">Verified Reviewer • 1 month ago</div>
-        <p class="review-text" style="font-size:0.8rem; margin:0;">"Best for emergency care near City Centre. I went there for wisdom tooth pain and got instant relief."</p>
+        <p class="review-text" style="font-size:0.8rem; margin:0;">"Best for emergency care near Baguiati. I went there for wisdom tooth pain and got instant relief."</p>
       </div>
     </div>
   </div>
@@ -619,69 +733,89 @@
 </section>
 
 <section class="form-section" id="book">
-  <div class="form-container-box">
-    <h3>Check Available Appointment</h3>
-    <p class="form-sub">Fill in your details — we'll call you back within 30 minutes.</p>
-    
-    <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" id="lead-conversion-form" oninput="trackFormStart()">
-      <input type="hidden" name="_subject" value="New Landing Page Appointment Request!">
-      <input type="hidden" name="_captcha" value="false">
-
-      <div id="step-1">
-        <div class="form-group">
-          <label>What do you need help with?</label>
-          <select name="Treatment_Reason" id="treatment-dropdown" onchange="validateSelection()">
-            <option value="" disabled selected>Select an option...</option>
-            <option value="Tooth Pain / Emergency">Tooth Pain / Emergency</option>
-            <option value="Root Canal">Root Canal</option>
-            <option value="Dental Implants">Dental Implants</option>
-            <option value="Braces & Aligners">Braces & Aligners</option>
-            <option value="General Checkup">General Checkup</option>
-          </select>
-        </div>
-        <button type="button" class="submit-btn" id="next-step-btn" disabled style="opacity: 0.5; cursor: not-allowed;" onclick="showStep2()">Next Step →</button>
+  <div class="form-offer-wrapper">
+    <div class="offer-content">
+      <h2>What You Get in Your Free Consultation</h2>
+      <p>Take the first step towards a healthy, pain-free smile without any financial commitment today.</p>
+      <ul class="offer-list">
+        <li>Full dental checkup & evaluation</li>
+        <li>One-on-one doctor consultation</li>
+        <li>Step-by-step treatment guidance</li>
+        <li>Transparent cost estimate</li>
+        <li>Emergency pain evaluation (if needed)</li>
+        <li>Absolutely no obligation to start treatment</li>
+      </ul>
+      <div class="wa-alternative">
+        <p>Prefer WhatsApp?</p>
+        <a href="https://wa.me/917003477659?text=Hi%2C%20I%20want%20to%20book%20a%20consultation" class="btn-outline-wa" target="_blank" onclick="trackAnalyticsEvent('Form Section WhatsApp Click')">💬 Chat With Clinic Now</a>
       </div>
+    </div>
 
-      <div id="step-2" style="display:none;">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" name="Name" placeholder="Rahul Sharma" required>
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" name="Phone" placeholder="98XXXXXXXX" required>
-          </div>
-        </div>
-        <button type="submit" class="submit-btn" id="form-submit-btn">Book Free Consultation</button>
-        <p class="form-fear-reduction">No treatment commitment required.</p>
-        <p class="trust-trigger">🔒 100% Secure & Private | No payment required to book.</p>
+    <div class="form-container-box">
+      <div class="form-urgency">
+        ⏱️ Evening appointments fill quickly. Book before 7 PM for a same-day callback.
       </div>
-    </form>
+      
+      <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" id="lead-conversion-form" oninput="trackFormStart()">
+        <input type="hidden" name="_subject" value="New Landing Page Appointment Request!">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div id="step-1">
+          <div class="form-group">
+            <label>What do you need help with?</label>
+            <select name="Treatment_Reason" id="treatment-dropdown" onchange="validateSelection()">
+              <option value="" disabled selected>Select an option...</option>
+              <option value="Tooth Pain / Emergency">Tooth Pain / Emergency</option>
+              <option value="Root Canal">Root Canal</option>
+              <option value="Dental Implants">Dental Implants</option>
+              <option value="Braces & Aligners">Braces & Aligners</option>
+              <option value="General Checkup">General Checkup</option>
+            </select>
+          </div>
+          <button type="button" class="submit-btn" id="next-step-btn" disabled style="opacity: 0.5; cursor: not-allowed;" onclick="showStep2()">Next Step →</button>
+        </div>
+
+        <div id="step-2" style="display:none;">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" name="Name" placeholder="Rahul Sharma" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" name="Phone" placeholder="98XXXXXXXX" required>
+            </div>
+          </div>
+          <button type="submit" class="submit-btn" id="form-submit-btn">Book Free Consultation</button>
+          <p class="form-fear-reduction">No treatment commitment required.</p>
+          <p class="trust-trigger">🔒 100% Secure & Private | No payment required to book.</p>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="footer-container">
     <div class="footer-info">
-      <div class="f-logo">Vardhaman<span>Dental</span> Clinic</div>
-      <p>Medicare pharmacy, Near Shibam marriage hall, Shankarpur West, Durgapur, West Bengal 713206</p>
-      <p class="footer-landmark">📍 Located near City Centre, Durgapur</p>
+      <div class="f-logo">Silver Canal<span>Dental</span> Clinic</div>
+      <p>57 Rafi Ahmed Kidwai Road, Rodkol Rd, Ward Number 23, Baguiati, Kolkata, West Bengal 700055</p>
+      <p class="footer-landmark">📍 Located in Baguiati, Kolkata</p>
       <div class="footer-meta-local">
-        <p><strong>Call Clinic:</strong> <a href="tel:+919XXXXXXXXX">+91 9X-XXXX-XXXX</a></p>
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/919XXXXXXXXX?text=Hi" target="_blank">+91 9X-XXXX-XXXX</a></p>
-        <p><strong>Working Hours:</strong> Mon – Sun | 9:00 AM – 9:00 PM</p>
+        <p><strong>Call Clinic:</strong> <a href="tel:07003477659">07003477659</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/917003477659?text=Hi" target="_blank">07003477659</a></p>
+        <p><strong>Working Hours:</strong> Mon – Sun | 5:00 PM – 9:00 PM</p>
       </div>
     </div>
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.9472346743917!2d87.3015486!3d23.5343468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCszInMDMuNiJOIDg3wrAxOCcwNS42IkU!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://maps.app.goo.gl/JDR6Sq5Kq3rBvjaSA" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
-  <div class="copyright-text">Trusted by families in Durgapur, West Bengal · All rights reserved.</div>
+  <div class="copyright-text">Trusted by families in Baguiati, Kolkata · All rights reserved.</div>
 </footer>
 
 <div class="floating-btns">
-  <a href="https://wa.me/919XXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20dental%20consultation" class="float-btn float-wa" target="_blank" id="float-wa-btn" onclick="trackAnalyticsEvent('Floating WhatsApp Clicktocall')">
+  <a href="https://wa.me/917003477659?text=Hi%2C%20I%20want%20to%20book%20a%20dental%20consultation" class="float-btn float-wa" target="_blank" id="float-wa-btn" onclick="trackAnalyticsEvent('Floating WhatsApp Clicktocall')">
     <div>
       <span>💬 WhatsApp Us</span>
       <span class="wa-badge-text">Quick response on WhatsApp</span>
@@ -693,7 +827,7 @@
   <a href="#book" class="mobile-btn mobile-form-action" id="mobile-bar-form-nav" onclick="trackAnalyticsEvent('Mobile Bar Form Scroll')">
     <span class="label-main">📅 Book Now</span>
   </a>
-  <a href="https://wa.me/919XXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20dental%20consultation" class="mobile-btn mobile-wa" target="_blank" id="mobile-bar-wa" onclick="trackAnalyticsEvent('Mobile Bar WhatsApp Chat')">
+  <a href="https://wa.me/917003477659?text=Hi%2C%20I%20want%20to%20book%20a%20dental%20consultation" class="mobile-btn mobile-wa" target="_blank" id="mobile-bar-wa" onclick="trackAnalyticsEvent('Mobile Bar WhatsApp Chat')">
     <span class="label-main">💬 WhatsApp</span>
   </a>
 </div>
@@ -749,7 +883,6 @@
     trackAnalyticsEvent('Form Step 1 Continued');
   }
 
-  // FIXED: Slider range value maps natively to width properties on wrapper trees
   function slideBeforeAfter(input) {
     document.getElementById('img-before').style.width = input.value + '%';
   }
