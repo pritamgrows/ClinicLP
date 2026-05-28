@@ -6,7 +6,7 @@
 <title>Painless Dental Clinic in Baguiati | Same-Day Emergency Appointment</title>
 <meta name="description" content="Get painless dental care for nervous patients in Baguiati. Root canals, implants & emergency care by senior dentists. 4.9★ rated. Book a free consultation today.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
 <style>
   :root {
     --gold: #C8974A;
@@ -31,10 +31,14 @@
     color: var(--text-body);
     background: var(--off-white);
     overflow-x: hidden;
-    line-height: 1.5;
+    line-height: 1.6; /* Slightly increased for readability */
   }
 
   h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+  
+  /* Bold highlights for scanning */
+  strong, b { font-weight: 700; color: var(--navy); }
+  .text-highlight { color: var(--gold); }
 
   /* ── STICKY HEADER ── */
   .sticky-bar {
@@ -79,6 +83,7 @@
     color: rgba(255,255,255,0.85); font-size: 1.1rem;
     margin-bottom: 2rem; max-width: 540px;
   }
+  .hero-sub strong { color: var(--white); }
 
   /* Modified CTA Stack */
   .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; align-items: center; }
@@ -119,7 +124,7 @@
   section { padding: 4rem; }
   .section-label {
     display: inline-block; text-transform: uppercase; letter-spacing: 0.08em;
-    font-size: 0.75rem; color: var(--gold); margin-bottom: 0.4rem; font-weight: 700;
+    font-size: 0.75rem; color: var(--gold); margin-bottom: 0.4rem; font-weight: 800;
   }
   .section-title { font-family: 'Playfair Display', serif; font-size: 2rem; line-height: 1.2; color: var(--navy); font-weight: 700; margin-bottom: 0.5rem; }
   .section-title em { color: var(--gold); font-style: normal; }
@@ -127,7 +132,7 @@
   .centered { text-align: center; margin: 0 auto; }
   .centered .section-body { margin: 0 auto 1.5rem; }
 
-  /* ── DOCTOR TRUST SECTION (Enhanced Authority) ── */
+  /* ── DOCTOR TRUST SECTION ── */
   .doctor-section { background: var(--white); display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 3rem; align-items: center; }
   .doctor-image-wrap { width: 100%; max-width: 320px; border-radius: var(--radius-lg); overflow: hidden; justify-self: end; }
   .doctor-image-wrap img { width: 100%; height: 340px; object-fit: cover; display: block; }
@@ -148,33 +153,33 @@
   .stat-card h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold-light); font-weight: 700; margin-bottom: 0.15rem; }
   .stat-card p { color: rgba(255,255,255,0.8); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
 
-  /* ── CORE BENEFITS / WHY CHOOSE US (Upgraded) ── */
+  /* ── CORE BENEFITS / WHY CHOOSE US ── */
   .benefits-section { background: var(--off-white); }
   .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem; }
   .benefit-card-box { background: var(--white); border: 1px solid rgba(200,151,74,0.12); border-radius: var(--radius-lg); padding: 1.5rem; text-align: center; transition: transform 0.2s; }
   .benefit-card-box:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-  .b-box-icon { font-size: 2rem; line-height: 1; margin-bottom: 1rem; color: var(--gold); }
-  .benefit-card-box h4 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem; font-weight: 700; }
-  .benefit-card-box p { font-size: 0.8rem; color: var(--text-muted); }
+  .b-box-icon { font-size: 2rem; line-height: 1; margin-bottom: 0.5rem; color: var(--gold); }
+  .benefit-card-box h4 { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.25rem; font-weight: 700; }
+  .benefit-card-box p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
 
   /* ── PAIN-SPECIFIC INTENT SECTION ── */
   .pain-intent-section { background: var(--gold-pale); border-top: 1px solid rgba(200,151,74,0.2); border-bottom: 1px solid rgba(200,151,74,0.2); padding: 3rem 4rem; }
   .pain-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; max-width: 900px; margin: 0 auto; background: var(--white); padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
   .pain-left h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--emergency-red); margin-bottom: 0.5rem; }
-  .pain-left p { color: var(--text-body); font-weight: 600; margin-bottom: 1.5rem; }
+  .pain-left p { color: var(--text-body); font-weight: 500; margin-bottom: 1.5rem; }
   .pain-list { list-style: none; margin-bottom: 1.5rem; }
-  .pain-list li { margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.5rem; }
+  .pain-list li { margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-body); display: flex; align-items: center; gap: 0.5rem; font-weight: 600;}
   .pain-list li::before { content: "⚠️"; font-size: 0.8rem; }
   .pain-cta-wrap { display: flex; gap: 1rem; }
   .btn-emergency { background: var(--emergency-red); color: white; padding: 0.8rem 1.5rem; border-radius: var(--radius); text-decoration: none; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
 
-  /* ── HOW IT WORKS / WHAT HAPPENS (Process Flow) ── */
+  /* ── HOW IT WORKS / WHAT HAPPENS ── */
   .process-section { background: var(--white); }
   .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; max-width: 1000px; margin-left: auto; margin-right: auto; position: relative; }
   .process-card { background: var(--off-white); padding: 2rem; border-radius: var(--radius-lg); text-align: center; border: 1px solid rgba(20,33,61,0.05); position: relative; z-index: 2; }
   .process-step-num { width: 40px; height: 40px; background: var(--gold); color: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; margin: 0 auto 1rem; }
-  .process-card h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.5rem; }
-  .process-card p { font-size: 0.85rem; color: var(--text-muted); }
+  .process-card h4 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .process-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
   
   /* ── BEFORE & AFTER SLIDER ── */
   .slider-section { background: var(--white); color: var(--text-body); border-top: 1px solid rgba(200,151,74,0.12); }
@@ -186,7 +191,7 @@
   .label-before { left: 1rem; }
   .label-after { right: 1rem; }
   .ba-slider-input { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; z-index: 10; }
-  .slider-disclaimer { text-align: center; color: var(--text-muted); font-size: 0.75rem; margin-top: 0.75rem; font-style: italic; }
+  .slider-disclaimer { text-align: center; color: var(--text-muted); font-size: 0.7rem; margin-top: 0.75rem; font-style: italic; }
 
   /* ── REAL CLINIC ENVIRONMENT GALLERY ── */
   .gallery-section { background: var(--white); border-top: 1px solid rgba(200,151,74,0.12); padding: 3rem 4rem; }
@@ -223,7 +228,7 @@
   .faq-toggle { font-size: 0.9rem; font-weight: 700; color: var(--gold); transition: transform 0.3s; }
   .faq-item.open .faq-toggle { transform: rotate(45deg); }
   .faq-a { padding: 0 1.2rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; max-height: 0; overflow: hidden; transition: all 0.3s ease; }
-  .faq-item.open .faq-a { max-height: 100px; padding: 0.4rem 1.2rem 1rem; }
+  .faq-item.open .faq-a { max-height: 120px; padding: 0.4rem 1.2rem 1rem; }
 
   /* ── INLINE FORM & OFFER SECTION ── */
   .form-section { background: var(--navy-mid); color: var(--white); padding: 5rem 4rem; }
@@ -232,7 +237,8 @@
   .offer-content h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--gold-light); margin-bottom: 0.5rem; }
   .offer-content p { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; font-size: 0.95rem; }
   .offer-list { list-style: none; margin-bottom: 2rem; }
-  .offer-list li { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.8rem; font-size: 0.95rem; font-weight: 600; }
+  .offer-list li { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.8rem; font-size: 0.95rem; color: var(--white); }
+  .offer-list li strong { color: var(--gold-light); font-weight: 700; }
   .offer-list li::before { content: "✓"; background: var(--gold); color: var(--navy); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; }
   
   .wa-alternative { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
@@ -241,7 +247,8 @@
   .btn-outline-wa:hover { background: #25D366; color: white; }
 
   .form-container-box { background: var(--navy); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(200,151,74,0.25); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
-  .form-urgency { background: rgba(200,151,74,0.1); border-left: 3px solid var(--gold); padding: 0.75rem 1rem; margin-bottom: 1.5rem; font-size: 0.8rem; font-weight: 600; color: var(--gold-light); }
+  .form-urgency { background: rgba(200,151,74,0.1); border-left: 3px solid var(--gold); padding: 0.75rem 1rem; margin-bottom: 1.5rem; font-size: 0.8rem; color: var(--white); }
+  .form-urgency strong { color: var(--gold-light); }
   .form-group { margin-bottom: 1rem; }
   .form-group label { display: block; color: rgba(255,255,255,0.75); font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.35rem; font-weight: 700; }
   .form-group input, .form-group select { width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(200,151,74,0.3); border-radius: var(--radius); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 0.9rem; padding: 0.75rem 1rem; outline: none; }
@@ -300,7 +307,7 @@
     .hero-sub { font-size: 1rem; margin: 0 auto 1.5rem; max-width: 100%; }
     .hero-visual { display: none; } 
 
-    /* UPDATED: Smaller Mobile Buttons for Hero */
+    /* Smaller Mobile Buttons for Hero */
     .hero-ctas { 
       display: grid; 
       grid-template-columns: 1fr 1fr; 
@@ -344,7 +351,8 @@
 
     .form-offer-wrapper { grid-template-columns: 1fr; gap: 2rem; }
     .offer-content { text-align: center; }
-    .offer-list li { justify-content: center; text-align: left; }
+    .offer-list li { justify-content: center; text-align: center; display: block; }
+    .offer-list li::before { display: inline-flex; margin-right: 0.5rem; margin-bottom:-5px; }
     .form-section { padding: 3rem 1rem; }
     
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
@@ -450,7 +458,7 @@
 <section class="hero" id="home">
   <div class="hero-text">
     <h1>Painless Dental Care for <em>Nervous Patients</em> in Baguiati</h1>
-    <p class="hero-sub">Root canals, implants & emergency dental care with same-day appointments.</p>
+    <p class="hero-sub"><strong>Root canals, implants & emergency care.</strong> Book your same-day appointment.</p>
 
     <div class="hero-ctas">
       <a href="#book" class="primary" id="hero-cta-book" onclick="trackAnalyticsEvent('Hero Primary Click')">Get Free Consultation</a>
@@ -459,14 +467,14 @@
     </div>
     
     <div class="hero-trust-subtext">
-      Rated 4.9★ on Google by 200+ local patients. <strong>Limited same-day emergency slots available.</strong>
+      Rated 4.9★ by 200+ local patients. <strong>Limited same-day emergency slots available.</strong>
     </div>
 
     <div class="hero-trust-row">
       <div class="trust-item"><span>4.9 ★</span>Google Rating</div>
       <div class="trust-item"><span>2,000+</span>Happy Patients</div>
       <div class="trust-item"><span>25+ Yrs</span>In Practice</div>
-      <div class="trust-item"><span>Ward Number 23</span>Baguiati, WB</div>
+      <div class="trust-item"><span>Ward No. 23</span>Baguiati, WB</div>
     </div>
   </div>
 
@@ -491,56 +499,56 @@
       <li>Advanced Implant Training</li>
       <li>Cosmetic & Restorative Specialist</li>
     </ul>
-    <p class="doctor-paragraph">Helping families across Baguiati with painless and modern dental care. We focus on making every nervous patient feel completely safe, relaxed, and comfortable from start to finish.</p>
+    <p class="doctor-paragraph">Providing <strong>painless, modern dental care</strong> in Baguiati. Our specialty? Helping <strong>nervous patients</strong> feel completely safe, relaxed, and comfortable from start to finish.</p>
   </div>
 </section>
 
 <section class="benefits-section">
   <div class="centered">
     <span class="section-label">Dental Care Without Fear</span>
-    <h2 class="section-title">Why Patients Travel to <em>Silver Canal Dental</em></h2>
-    <p class="section-body">We go beyond standard care to ensure your experience is comfortable, predictable, and fully transparent.</p>
+    <h2 class="section-title">Why Patients Travel to <em>Silver Canal</em></h2>
+    <p class="section-body">We guarantee an experience that is comfortable, predictable, and fully transparent.</p>
   </div>
   <div class="benefits-grid">
     <div class="benefit-card-box">
       <div class="b-box-icon">🖥️</div>
       <h4>Digital X-Ray</h4>
-      <p>Modern diagnostic equipment for accurate planning.</p>
+      <p>Modern diagnostics for 100% accurate planning.</p>
     </div>
     <div class="benefit-card-box">
       <div class="b-box-icon">👨‍⚕️</div>
-      <h4>Experienced Dentist</h4>
-      <p>Care provided by senior MDS specialists.</p>
+      <h4>MDS Specialists</h4>
+      <p>Care provided only by highly experienced doctors.</p>
     </div>
     <div class="benefit-card-box">
       <div class="b-box-icon">⚡</div>
       <h4>Same-Day Relief</h4>
-      <p>Quick emergency appointments to stop the pain fast.</p>
+      <p>Quick appointments to stop your pain immediately.</p>
     </div>
     <div class="benefit-card-box">
       <div class="b-box-icon">🛡️</div>
-      <h4>Strict Sterilization</h4>
-      <p>100% sanitized tools and operatory environment.</p>
+      <h4>Strict Hygiene</h4>
+      <p>Fully sanitized tools and a sterile environment.</p>
     </div>
     <div class="benefit-card-box">
       <div class="b-box-icon">💰</div>
-      <h4>Transparent Pricing</h4>
-      <p>Clear costs discussed before any treatment begins.</p>
+      <h4>Clear Pricing</h4>
+      <p>Upfront costs discussed <strong>before</strong> treatment begins.</p>
     </div>
     <div class="benefit-card-box">
       <div class="b-box-icon">🧘</div>
       <h4>Nervous Friendly</h4>
-      <p>Gentle techniques designed specifically for anxious patients.</p>
+      <p>Gentle techniques made for anxious patients.</p>
     </div>
     <div class="benefit-card-box">
       <div class="b-box-icon">🌙</div>
       <h4>Evening Slots</h4>
-      <p>Flexible 5 PM to 9 PM timings for working professionals.</p>
+      <p>Flexible 5 PM to 9 PM timings for professionals.</p>
     </div>
     <div class="benefit-card-box">
       <div class="b-box-icon">📱</div>
-      <h4>WhatsApp Support</h4>
-      <p>Direct communication with the clinic anytime.</p>
+      <h4>WhatsApp Chat</h4>
+      <p>Directly communicate with our clinic anytime.</p>
     </div>
   </div>
 </section>
@@ -549,15 +557,14 @@
   <div class="pain-grid">
     <div class="pain-left">
       <h2>Tooth Pain? Get Same-Day Relief</h2>
-      <p>Don't wait for the pain to get worse. We keep emergency slots open daily to handle severe dental issues immediately.</p>
+      <p><strong>Don't wait.</strong> We keep daily emergency slots open to handle severe dental pain right away.</p>
       <ul class="pain-list">
         <li>Severe, throbbing pain</li>
         <li>Swelling or bleeding gums</li>
-        <li>Broken or chipped tooth</li>
+        <li>Broken or chipped teeth</li>
         <li>Wisdom tooth issues</li>
-        <li>Lost crown or filling</li>
       </ul>
-      <div class="pain-cta-wrap">
+      <div class="pain-cta-wrap" style="margin-top: 1rem;">
         <a href="tel:07003477659" class="btn-emergency">📞 Call Clinic Now</a>
       </div>
     </div>
@@ -573,23 +580,23 @@
   <div class="centered">
     <span class="section-label">Your Journey With Us</span>
     <h2 class="section-title">What Happens During Your <em>Visit?</em></h2>
-    <p class="section-body">A simple, stress-free process designed to put you at ease from the moment you walk in.</p>
+    <p class="section-body">A simple, stress-free process designed to put you at ease.</p>
   </div>
   <div class="process-grid">
     <div class="process-card">
       <div class="process-step-num">1</div>
-      <h4>Consultation & Scan</h4>
-      <p>We'll examine your teeth, take necessary digital x-rays, and find the exact root cause of the issue.</p>
+      <h4>Consultation</h4>
+      <p>Digital X-rays & expert analysis to find the exact root cause.</p>
     </div>
     <div class="process-card">
       <div class="process-step-num">2</div>
-      <h4>Doctor Explains Treatment</h4>
-      <p>Dr. Siddhi will explain your options clearly, including timelines and a transparent cost estimate.</p>
+      <h4>Clear Plan</h4>
+      <p>Dr. Siddhi explains your options, timelines, and <strong>exact costs</strong>.</p>
     </div>
     <div class="process-card">
       <div class="process-step-num">3</div>
-      <h4>Start Treatment Comfortably</h4>
-      <p>Once you are ready and relaxed, we use modern numbing techniques for a completely painless procedure.</p>
+      <h4>Painless Care</h4>
+      <p>We use modern numbing techniques for a completely <strong>pain-free</strong> procedure.</p>
     </div>
   </div>
 </section>
@@ -623,7 +630,7 @@
   <div class="centered">
     <span class="section-label">Real Patient Results</span>
     <h2 class="section-title">See The <em>Difference</em></h2>
-    <p class="section-body">Swipe to see actual patient dental transformations from our local archive. <br><span style="font-size:0.85rem; font-weight:700; color:var(--gold);">Actual patient treated at our Baguiati clinic</span></p>
+    <p class="section-body">Swipe to see actual dental transformations. <br><span style="font-size:0.85rem; font-weight:700; color:var(--gold);">Treated at our Baguiati clinic</span></p>
   </div>
   
   <div class="slider-container">
@@ -635,14 +642,14 @@
     <span class="slider-label label-after">After</span>
     <input type="range" min="0" max="100" value="50" class="ba-slider-input" oninput="slideBeforeAfter(this)">
   </div>
-  <p class="slider-disclaimer">Results may vary from patient to patient.</p>
+  <p class="slider-disclaimer">Results may vary by patient.</p>
 </section>
 
 <section class="gallery-section">
   <div class="centered">
     <span class="section-label">Our Environment</span>
     <h2 class="section-title">Inside Our Modern Clinic</h2>
-    <p class="section-body">See our clean, fully sterilized treatment rooms and welcoming waiting area.</p>
+    <p class="section-body">Fully sterilized treatment rooms and a welcoming waiting area.</p>
   </div>
   <div class="gallery-grid">
     <div class="gallery-item"><img src="clinic-reception.jpg" alt="Clean reception and welcoming desk at our Baguiati dental clinic" loading="lazy"></div>
@@ -691,7 +698,7 @@
       <div style="color:var(--gold); font-size: 0.85rem; font-weight:700;">★★★★★ 4.9 Rating</div>
     </div>
     <div style="width:1px; height:35px; background:rgba(0,0,0,0.15);"></div>
-    <div class="verified-text">🛡️ 100% Verified Patient Reviews</div>
+    <div class="verified-text">🛡️ 100% Verified Reviews</div>
   </div>
 </section>
 
@@ -706,28 +713,28 @@
         Is the treatment painful?
         <div class="faq-toggle">+</div>
       </div>
-      <div class="faq-a">No. We use modern numbing techniques and advanced tools so you feel relaxed and completely comfortable during your visit.</div>
+      <div class="faq-a"><strong>No.</strong> We use modern numbing techniques so you feel totally relaxed and comfortable during your visit.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        What are the treatment costs & EMI options?
+        What are the treatment costs?
         <div class="faq-toggle">+</div>
       </div>
-      <div class="faq-a">We provide clear cost breakdowns upfront before treatment starts. Easy 0% interest monthly payment options are available.</div>
+      <div class="faq-a">We provide <strong>clear cost breakdowns upfront</strong>. Easy 0% interest monthly payment options are also available.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        Are immediate emergency slots available?
+        Are emergency slots available?
         <div class="faq-toggle">+</div>
       </div>
-      <div class="faq-a">Yes. We keep open slots daily specifically to take care of urgent dental problems and relieve pain fast.</div>
+      <div class="faq-a"><strong>Yes.</strong> We keep open slots daily specifically to handle urgent dental problems and relieve pain fast.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
-        Is the initial consultation completely free?
+        Is the initial consultation free?
         <div class="faq-toggle">+</div>
       </div>
-      <div class="faq-a">Yes. Your first consultation includes a complete exam and a clear treatment estimate with absolutely zero charges.</div>
+      <div class="faq-a"><strong>Yes.</strong> Your first visit includes a complete exam and a clear estimate with absolutely zero charges.</div>
     </div>
   </div>
 </section>
@@ -736,14 +743,13 @@
   <div class="form-offer-wrapper">
     <div class="offer-content">
       <h2>What You Get in Your Free Consultation</h2>
-      <p>Take the first step towards a healthy, pain-free smile without any financial commitment today.</p>
+      <p>Start your journey to a pain-free smile today with zero financial commitment.</p>
       <ul class="offer-list">
-        <li>Full dental checkup & evaluation</li>
-        <li>One-on-one doctor consultation</li>
-        <li>Step-by-step treatment guidance</li>
-        <li>Transparent cost estimate</li>
-        <li>Emergency pain evaluation (if needed)</li>
-        <li>Absolutely no obligation to start treatment</li>
+        <li><strong>Full dental checkup</strong> & evaluation</li>
+        <li><strong>1-on-1 doctor consultation</strong></li>
+        <li>Step-by-step <strong>treatment guidance</strong></li>
+        <li><strong>Transparent cost</strong> estimate</li>
+        <li><strong>Emergency pain evaluation</strong></li>
       </ul>
       <div class="wa-alternative">
         <p>Prefer WhatsApp?</p>
@@ -753,7 +759,7 @@
 
     <div class="form-container-box">
       <div class="form-urgency">
-        ⏱️ Evening appointments fill quickly. Book before 7 PM for a same-day callback.
+        ⏱️ <strong>Evening slots fill quickly.</strong> Book before 7 PM for a same-day callback.
       </div>
       
       <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST" id="lead-conversion-form" oninput="trackFormStart()">
